@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container mt-3">
+        <h2 class="mb-3">Edit Task</h2>
+
+        <form class="mb-3" method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}

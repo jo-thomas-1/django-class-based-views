@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container mt-3">
+        <h2 class="mb-3">Mark task as done</h2>
+
+        <form class="mb-3" method="POST" action="">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col-sm-10">
+                    Are you sure you want to mark this task as completed?
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10">
+                    <p><b>Task:</b> {{ task.name }} [Priority {{ task.priority }}]</p>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a class="btn btn-primary" href="/" role="button">No</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

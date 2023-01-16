@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h1>Task in details</h1>
+    <p><b>Name:</b> {{ task.name }}</p>
+    <p><b>Priority:</b> {{ task.priority }}</p>
+    <p><b>Date:</b> {{ task.date }}</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'todo_app:delete' task.id %}" class="card-link btn btn-danger">Done</a>
+        <a href="{% url 'todo_app:edit' task.id %}" class="card-link btn btn-warning">Update</a>
+    </div>
+</div>
+{% endblock %}
